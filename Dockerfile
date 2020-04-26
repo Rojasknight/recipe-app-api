@@ -1,16 +1,16 @@
 FROM python:3.7-alpine
-MAINTAINER Danny Rojas
+MAINTAINER rojasknight.
 
-ENV PYTHONUNBUFFERDED 1
+ENV PYTHONUNBUFFERED 1
+
+# Install dependencies
 COPY ./requirements.txt /requirements.txt
 RUN pip install -r /requirements.txt
 
+# Setup directory structure
 RUN mkdir /app
 WORKDIR /app
-COPY ./app /apps
+COPY ./app/ /app
 
 RUN adduser -D user
 USER user
-
-
-
