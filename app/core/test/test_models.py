@@ -18,7 +18,7 @@ class Modeltest(TestCase):
 
     def test_new_user_email_normalized(self):
         """Test the email for new user"""
-        email = "test@MAIL:COM"
+        email = "test@MAIL.COM"
         user = get_user_model().objects.create_user(
             email,
             'test123'
